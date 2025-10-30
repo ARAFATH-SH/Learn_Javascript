@@ -1,0 +1,5 @@
+const id = [5, 3, 8, 1, 4];
+id.sort(function(a, b){
+    return a - b;
+});
+console.log(id);
