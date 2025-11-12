@@ -1,7 +1,33 @@
-console.log("Hello, World!");
+const paymentSuccess = true;
+const marks = 70;
+function enroll(callback){
+    console.log("Course enrollment is in progress...");
+    setTimeout(function(){
+        if(paymentSuccess){
+            callback();
+        } else {
+            console.log("Payment Failed");
+        }
+    },2000);
+}
+function progress(callback){
+    console.log("Course is in progress...");
+    setTimeout(function(){
+        if(marks>=80){
+            callback();
+        }
+        else{
+            console.log("You could not get enough marks to get the certificate");
+        }
+    },3000);
+}
+function getCertificate(){
+    console.log("Preparing your certificate...");
+    setTimeout(function(){
+        console.log("Congrats! You got the certificate");
+    },1000);
+};
 
-setTimeout(function(){
-    console.log("This message is shown after 2 seconds");
-}, 2000);
-
-console.log("This message is shown immediately");
+enroll(function(){
+    progress(getCertificate);
+});
