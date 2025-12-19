@@ -4,3 +4,4 @@ cars.pop(); // Remove the last element from the array
 cars.forEach(function(car) {
   console.log(car);
 });
+
